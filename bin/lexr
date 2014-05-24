@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+# version
+
+VERSION="0.0.1"
+
+# cache
+
+CACHE=~/.lexr
+
+#
+# Print usage info
+#
+
+usage() {
+  cat <<EOF
+
+  Usage: lexr [options] [url]
+
+  Commands:
+
+    # shorten url and add to list
+    $ lexr add <url>
+
+    # list shortened urls
+    $ lexr list
+    $ lexr ls
+    $ lexr
+
+    # display statistics about the bookmarks
+    $ lexr stats
+
+    # clear url history
+    $ lexr clear
+
+  Options:
+
+    -V, --version print lexr version
+    -h, --help print this usage info
+
+EOF
+}
+
+#
+# parse args
+#
+
+while test $# -ne 0; do
+  arg=$1; shift
+  case $arg in
+    -V|--version) echo $VERSION; exit ;;
+    -h|--help) usage; exit ;;
+  esac
+done

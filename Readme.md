@@ -20,7 +20,30 @@
 
 ## Usage
 
-  Todo
+```
+Usage: lexr [cmd] [url]
+
+Commands:
+
+  # shorten url and add to list
+  $ lexr add <url>
+
+  # list shortened urls
+  $ lexr list
+  $ lexr ls
+  $ lexr
+
+  # display statistics about the bookmarks
+  $ lexr stats
+
+  # clear url history
+  $ lexr clear
+
+Options:
+
+  -V, --version print lexr version
+  -h, --help print this usage info
+```
 
 ## License
 
