@@ -61,8 +61,25 @@ shorten_url() {
     echo "    url: $url"
     echo "    result: $res"
     echo
-    echo "$now|$url|$res" >> $STORE
+    echo "$now|$res|$url" >> $STORE
   fi;
+}
+
+#
+# list urls
+#
+
+list_urls() {
+  echo
+  cat $STORE \
+    | awk '
+    BEGIN { FS = "|" }
+    {
+      printf "  \033[90m%s\033[0m  :  ", $1
+      printf "\033[36m%s\033[0m  ->  ", $2
+      printf "\033[90m%s\033[0m\n", $3
+    }'
+  echo
 }
 
 #
@@ -83,6 +100,7 @@ while test $# -ne 0; do
     -V|--version) echo $VERSION; exit ;;
     -h|--help) usage; exit ;;
     clear) clear_history; exit ;;
+    list|ls) list_urls; exit ;;
     add) shorten_url "$@"; exit ;;
   esac
 done
