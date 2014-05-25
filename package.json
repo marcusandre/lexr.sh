@@ -1,6 +1,6 @@
 {
   "name": "lexr.sh",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Dead simple CLI for URL shortener lexr.us via curl(1)",
   "homepage": "https://github.com/marcusandre/lexr.sh",
   "author": "Marcus André <hello@marcusandre.de>",
