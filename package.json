@@ -1,0 +1,25 @@
+{
+  "name": "lexr.sh",
+  "version": "0.0.0",
+  "description": "Dead simple CLI for URL shortener lexr.us via curl(1)",
+  "homepage": "https://github.com/marcusandre/lexr.sh",
+  "author": "Marcus André <hello@marcusandre.de>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marcusandre/lexr.sh.git"
+  },
+  "keywords": [
+    "url",
+    "shortening",
+    "bash",
+    "script",
+    "cli"
+  ],
+  "bugs": {
+    "url": "https://github.com/marcusandre/lexr.sh/issues"
+  },
+  "bin": {
+    "lexr": "bin/lexr"
+  },
+  "license": "MIT"
+}

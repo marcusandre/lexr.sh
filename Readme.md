@@ -8,6 +8,11 @@
     $ make install
     $ make uninstall
 
+  or via npm(1)
+
+    $ npm install -g lexr.us
+    $ npm install -g marcusandre/lexr.us
+
 ## Example
 
   Shorten a url:
