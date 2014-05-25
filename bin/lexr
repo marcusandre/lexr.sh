@@ -4,9 +4,9 @@
 
 VERSION="0.0.1"
 
-# cache
+# store
 
-CACHE=~/.lexr
+STORE=~/.lexr
 
 #
 # Print usage info
@@ -42,6 +42,24 @@ EOF
 }
 
 #
+# shorten url and add to list
+#
+
+shorten_url() {
+  local now=$(date +%Y-%m-%d)
+  local url=$1;
+  local res=$(curl --silent -X POST -d "text_mode=1&url=$url" http://lexr.us/api/url)
+  echo
+  echo "  Shortened url via lexr.us API"
+  echo
+  echo "    date: $now"
+  echo "    url: $url"
+  echo "    result: $res"
+  echo
+  echo "$now|$url|$res" >> $STORE
+}
+
+#
 # parse args
 #
 
@@ -50,5 +68,6 @@ while test $# -ne 0; do
   case $arg in
     -V|--version) echo $VERSION; exit ;;
     -h|--help) usage; exit ;;
+    add) shorten_url "$@"; exit ;;
   esac
 done
