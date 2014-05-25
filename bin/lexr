@@ -51,7 +51,7 @@ shorten_url() {
 
   if [[ $res == *"400"* ]]; then
     echo
-    echo "  It seems as if lexr.us can't shorten $url."
+    printf "  \033[90mIt seems as if lexr.us can't shorten\033[0m \033[36m%s\033[0m." $url
     echo
   else
     echo
