@@ -31,10 +31,6 @@ Commands:
   # list shortened urls
   $ lexr list
   $ lexr ls
-  $ lexr
-
-  # display statistics about the bookmarks
-  $ lexr stats
 
   # clear url history
   $ lexr clear

@@ -26,9 +26,6 @@ usage() {
     $ lexr list
     $ lexr ls
 
-    # display statistics about the bookmarks
-    $ lexr stats
-
     # clear url history
     $ lexr clear
 
