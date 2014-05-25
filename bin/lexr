@@ -25,7 +25,6 @@ usage() {
     # list shortened urls
     $ lexr list
     $ lexr ls
-    $ lexr
 
     # display statistics about the bookmarks
     $ lexr stats
@@ -60,6 +59,14 @@ shorten_url() {
 }
 
 #
+# clear lexr history
+#
+
+clear_history() {
+  rm $STORE
+}
+
+#
 # parse args
 #
 
@@ -68,6 +75,7 @@ while test $# -ne 0; do
   case $arg in
     -V|--version) echo $VERSION; exit ;;
     -h|--help) usage; exit ;;
+    clear) clear_history; exit ;;
     add) shorten_url "$@"; exit ;;
   esac
 done
