@@ -46,16 +46,23 @@ EOF
 
 shorten_url() {
   local now=$(date +%Y-%m-%d)
-  local url=$1;
+  local url=$1
   local res=$(curl --silent -X POST -d "text_mode=1&url=$url" http://lexr.us/api/url)
-  echo
-  echo "  Shortened url via lexr.us API"
-  echo
-  echo "    date: $now"
-  echo "    url: $url"
-  echo "    result: $res"
-  echo
-  echo "$now|$url|$res" >> $STORE
+
+  if [[ $res == *"400"* ]]; then
+    echo
+    echo "  It seems as if lexr.us can't shorten $url."
+    echo
+  else
+    echo
+    echo "  Shortened url via lexr.us API"
+    echo
+    echo "    date: $now"
+    echo "    url: $url"
+    echo "    result: $res"
+    echo
+    echo "$now|$url|$res" >> $STORE
+  fi;
 }
 
 #
